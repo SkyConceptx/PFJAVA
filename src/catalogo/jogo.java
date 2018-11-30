@@ -4,11 +4,13 @@ public class jogo {
 	private String nome;
 	private int ano;
 	private String genero;
+	private String acesso;
 	
-	public jogo(String nome, int ano, String genero) {
+	public jogo(String nome, int ano, String genero, String acesso) {
 		this.nome = nome;
 		this.ano = ano;
 		this.genero = genero;
+		this.acesso = acesso;
 	}
 
 	public String getNome() {
@@ -34,6 +36,12 @@ public class jogo {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	
-	
+
+	public String getAcesso() {
+		return acesso;
+	}
+
+	public void setAcesso(String acesso) {
+		this.acesso = acesso;
+	}	
 }
