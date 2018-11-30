@@ -8,8 +8,8 @@ public class catalogo {
 	private Celula fim;
 	private int qtde;
 		
-	public boolean NovoJogo(String nome, int ano, String genero, String chave) {
-		jogo obj = new jogo(nome, ano, genero, chave);
+	public boolean NovoJogo(String nome, int ano, String genero) {
+		jogo obj = new jogo(nome, ano, genero);
 		Celula novo = new Celula(obj);
 		
 		if(this.qtde == 0) {
