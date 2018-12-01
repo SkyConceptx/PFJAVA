@@ -1,9 +1,12 @@
 package catalogo;
 
+import FilaLigada.FilaLigada;
+
 public class jogo {
 	private String nome;
 	private int ano;
-	private String genero;
+	private String genero; 
+	FilaLigada codigos = new FilaLigada();
 	
 	public jogo(String nome, int ano, String genero) {
 		this.nome = nome;
@@ -34,6 +37,4 @@ public class jogo {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	
-	
 }

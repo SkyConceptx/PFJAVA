@@ -4,9 +4,11 @@ import user.*;
 
 public class TesteLogin {
 
+	private static Scanner sc;
+
 	public static void main(String[] args) {
 		CadastroLogin cadastros = new CadastroLogin();
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		int op=0;
 		cadastros.adm("admin", "admin");
 		do {
@@ -36,6 +38,7 @@ public class TesteLogin {
 				if (permissao == 2) { 
 					do{
 						System.out.println("1 - Adicionar Jogo");
+							System.out.println("Quantas chaves de acesso?");
 						System.out.println("2 - Deletar Jogo");
 						System.out.println("3 - Listar Usuarios");
 						System.out.println("4 - Deletar Usuario");
@@ -59,6 +62,7 @@ public class TesteLogin {
 				else if(permissao == 1) {
 					System.out.println("Catalogo de Jogos");
 					System.out.println("Jogos Comprados");
+					System.out.println("Reembolsar ultimo jogo");
 					System.out.println("Sair");
 				}
 			}

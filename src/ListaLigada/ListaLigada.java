@@ -2,7 +2,7 @@ package ListaLigada;
 
 
 
-public class ListaLigada implements IListaLinear {
+public class ListaLigada{
 	
 	private Celula inicio;
 	private Celula fim;
@@ -12,21 +12,16 @@ public class ListaLigada implements IListaLinear {
 		this.qtde = 0;
 	}
 
-	@Override
+	
 	public int size() {
 		return this.qtde;
 	}
 
-	@Override
-	public boolean isEmpty() {
-		return (this.qtde == 0);
-	}
-
-	@Override
+	
 	public boolean add(Object obj) {
 		Celula novo = new Celula(obj);
 		
-		if(this.isEmpty()) {
+		if(this.qtde == 0) {
 			this.inicio = novo;
 			this.fim = novo;
 		}
@@ -38,36 +33,7 @@ public class ListaLigada implements IListaLinear {
 		return true;
 	}
 
-	@Override
-	public boolean add(int pos, Object obj) {
-		Celula novo = new Celula(obj);
-		
-		if (pos == 0) {
-			novo.setProximo(this.inicio);
-			this.inicio = novo;
-			
-			if (this.isEmpty())
-				this.fim = novo;
-		}
-		else if (pos == this.qtde - 1 || pos > this.qtde) {
-			this.add(obj);
-		}
-		else {
-			Celula atual = this.inicio;
-			
-			for (int i = 0; i < pos - 1; i++) {
-				atual = atual.getProximo();
-			}
-			
-			novo.setProximo(atual.getProximo());
-			atual.setProximo(novo);
-		}
-		
-		this.qtde++;
-		return true;
-	}
-
-	@Override
+	
 	public Object get(int pos) {
 		if (pos > this.qtde) 
 			return null;
@@ -80,7 +46,7 @@ public class ListaLigada implements IListaLinear {
 		return atual.getElemento();
 	}
 
-	@Override
+	
 	public Object remove(int pos) {
 		Celula removido;
 		if (pos == 0) {
@@ -109,25 +75,6 @@ public class ListaLigada implements IListaLinear {
 		
 		this.qtde--;
 		return removido.getElemento();
-	}
-
-	@Override
-	public int indexOf(Object obj) {
-		for (int i = 0; i < this.qtde; i++) 
-			if (inicio.getElemento() == obj) {
-				return i;
-			}
-		return 0;
-		}
-
-	@Override
-	public boolean contains(Object obj) {
-		return false;
-	}
-
-	@Override
-	public Object[] toArray() {
-		return null;
 	}
 
 }
