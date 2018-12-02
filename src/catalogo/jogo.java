@@ -6,7 +6,8 @@ public class jogo {
 	private String nome;
 	private int ano;
 	private String genero; 
-	FilaLigada codigos = new FilaLigada();
+	FilaLigada chaves = new FilaLigada();
+	private int qtde;
 	
 	public jogo(String nome, int ano, String genero) {
 		this.nome = nome;
@@ -36,5 +37,18 @@ public class jogo {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
+	}
+	
+	public boolean GerarChaves(int NumChaves) {
+		for(int i=0; i<NumChaves;i++) {
+			chaves.enqueue(this.nome+this.ano+i);
+		}
+		return true;
+	}
+	
+	public String ObterChave() {
+		String chave = chaves.PegarChave(this.qtde);
+		this.qtde++;
+		return chave;
 	}
 }

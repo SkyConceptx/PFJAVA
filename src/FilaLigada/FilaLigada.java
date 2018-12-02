@@ -1,5 +1,4 @@
 package FilaLigada;
-import ListaLigada.Celula;
 
 public class FilaLigada{	
 	
@@ -25,11 +24,11 @@ public class FilaLigada{
 		else {
 			return null;
 		}
-	}
+	}	
 
 
-	public void enqueue(Object item) {
-		Celula novo = new Celula(item);
+	public void enqueue(String chave) {
+		Celula novo = new Celula(chave);
 		if(this.qtde==0) {
 			this.inicio = novo;
 			this.fim = novo;
@@ -40,8 +39,22 @@ public class FilaLigada{
 		}
 		this.qtde++;
 	}
+	
+	public String PegarChave(int numero) {
+		Celula atual = this.inicio;
+		String chave = (String)atual.getElemento();
+		
+		for(int i=0; i<=numero;i++) {
+		if (i > this.qtde) {
+			return null;
+		}
+		chave = (String)atual.getElemento();
+		atual = atual.getProximo();	
+		}
+		return chave;
+	}
 
-
+	
 	public Object[] toArray() {
 		Object[] elementos = new Object[this.qtde];
 		Celula atual = this.inicio;

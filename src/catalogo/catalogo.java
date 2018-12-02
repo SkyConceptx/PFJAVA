@@ -6,10 +6,10 @@ public class catalogo {
 	
 	ListaLigada catalogo = new ListaLigada();
 		
-	public boolean NovoJogo(String nome, int ano, String genero) {
+	public Object NovoJogo(String nome, int ano, String genero) {
 		jogo obj = new jogo(nome, ano, genero);
 		catalogo.add(obj);
-		return true;
+		return obj;
 	}
 	
 	public boolean DeletarJogo(String nome) {
@@ -24,12 +24,18 @@ public class catalogo {
 	}
 	
 	public boolean ListarJogos() {
+		System.out.println("----------------------------------------------");
 		for(int i = 0; i<catalogo.size(); i++) {
 			jogo obj = (jogo) catalogo.get(i);
-			System.out.println(obj.getNome());
-			System.out.println(obj.getAno());
-			System.out.println(obj.getGenero());
+			System.out.println(i+" - "+obj.getNome()+"|"+obj.getAno()+"|"+obj.getGenero()+"|");
 		}
+		System.out.println("----------------------------------------------");
 		return true;
 	}
+	
+	public jogo JogoSelecionado(int id) {
+		jogo obj = (jogo) catalogo.get(id);
+		return obj;
+	}
+	
 }	
