@@ -20,7 +20,7 @@ public class Main {
 		jogo obj1 = (jogo)listacatalogo.NovoJogo("Call of Duty", 2015, "Ação");
 		obj1.GerarChaves(100);
 		jogo obj2 = (jogo)listacatalogo.NovoJogo("Mario Bros", 1983, "Arcade");
-		obj2.GerarChaves(100);
+		obj2.GerarChaves(1);
 		cadastros.cadastrar("Lucas", "123", "123");
 		
 		do {
@@ -114,6 +114,9 @@ public class Main {
 									jogo jogocomprado = listacatalogo.JogoSelecionado(idjogo);
 									String chavecomprada = jogocomprado.ObterChave();
 									usuariologado.AdicionarJogoComprado(jogocomprado, chavecomprada);
+									if(jogocomprado.qtdeRest() == 0) {
+										listacatalogo.DeletarJogoPos(idjogo);
+									}
 								}
 							}
 							else if(opcaousu == 2){

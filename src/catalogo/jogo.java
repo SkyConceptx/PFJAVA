@@ -8,6 +8,7 @@ public class jogo {
 	private String genero; 
 	FilaLigada chaves = new FilaLigada();
 	private int qtde;
+	private int qtdeTotal; 
 	
 	public jogo(String nome, int ano, String genero) {
 		this.nome = nome;
@@ -43,6 +44,7 @@ public class jogo {
 		for(int i=0; i<NumChaves;i++) {
 			chaves.enqueue(this.nome+this.ano+i);
 		}
+		this.qtdeTotal = NumChaves;
 		return true;
 	}
 	
@@ -50,5 +52,9 @@ public class jogo {
 		String chave = chaves.PegarChave(this.qtde);
 		this.qtde++;
 		return chave;
+	}
+	
+	public int qtdeRest() {
+		return this.qtdeTotal-this.qtde;
 	}
 }

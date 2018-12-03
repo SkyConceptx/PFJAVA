@@ -23,11 +23,17 @@ public class catalogo {
 		return false;
 	}
 	
+	public boolean DeletarJogoPos(int i) {
+			catalogo.remove(i);
+			return true;
+	}
+	
 	public boolean ListarJogos() {
 		System.out.println("----------------------------------------------");
 		for(int i = 0; i<catalogo.size(); i++) {
 			jogo obj = (jogo) catalogo.get(i);
-			System.out.println(i+" - "+obj.getNome()+"|"+obj.getAno()+"|"+obj.getGenero()+"|");
+			System.out.println("ID:"+i+" - Nome:"+obj.getNome()+"|Ano:"+obj.getAno()+"|Genero:"+obj.getGenero()+"|Restante:"+obj.qtdeRest());
+			System.out.println("");
 		}
 		System.out.println("----------------------------------------------");
 		return true;
