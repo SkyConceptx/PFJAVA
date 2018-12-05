@@ -40,17 +40,12 @@ public class FilaLigada{
 		this.qtde++;
 	}
 	
-	public String PegarChave(int numero) {
+	public String PegarChave() {
 		Celula atual = this.inicio;
 		String chave = (String)atual.getElemento();
 		
-		for(int i=0; i<=numero;i++) {
-		if (i > this.qtde) {
-			return null;
-		}
 		chave = (String)atual.getElemento();
-		atual = atual.getProximo();	
-		}
+		
 		return chave;
 	}
 

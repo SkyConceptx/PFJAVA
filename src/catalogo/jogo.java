@@ -49,7 +49,8 @@ public class jogo {
 	}
 	
 	public String ObterChave() {
-		String chave = chaves.PegarChave(this.qtde);
+		String chave = chaves.PegarChave();
+		chaves.dequeue();
 		this.qtde++;
 		return chave;
 	}
